@@ -1,0 +1,101 @@
+version: '3.8'
+services:
+  postgres:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_DB: macrosift
+      POSTGRES_USER: macrosift
+      POSTGRES_PASSWORD: macrosift
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    expose:
+      - "5432"
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U macrosift"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  redis:
+    image: redis:7-alpine
+    volumes:
+      - redisdata:/data
+    expose:
+      - "6379"
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 3s
+      retries: 5
+
+  app:
+    build: .
+    ports:
+      - "3000:3000"
+    environment:
+      DATABASE_URL: postgresql://macrosift:macrosift@postgres:5432/macrosift
+      REDIS_URL: redis://redis:6379
+      NEXTAUTH_SECRET: ${NEXTAUTH_SECRET}
+      NEXTAUTH_URL: ${NEXTAUTH_URL}
+      GOOGLE_CLIENT_ID: ${GOOGLE_CLIENT_ID}
+      GOOGLE_CLIENT_SECRET: ${GOOGLE_CLIENT_SECRET}
+      TELEGRAM_BOT_TOKEN: ${TELEGRAM_BOT_TOKEN}
+      STRIPE_SECRET_KEY: ${STRIPE_SECRET_KEY}
+      STRIPE_PUBLISHABLE_KEY: ${STRIPE_PUBLISHABLE_KEY}
+      STRIPE_PRICE_PRO_MONTHLY: ${STRIPE_PRICE_PRO_MONTHLY}
+      STRIPE_WEBHOOK_SECRET: ${STRIPE_WEBHOOK_SECRET}
+      NEXT_PUBLIC_APP_URL: ${NEXT_PUBLIC_APP_URL}
+      TWELVE_DATA_API_KEY: ${TWELVE_DATA_API_KEY}
+      ALPHA_VANTAGE_API_KEY: ${ALPHA_VANTAGE_API_KEY}
+      RESEND_API_KEY: ${RESEND_API_KEY}
+      CRON_SECRET: ${CRON_SECRET}
+      MT4_HISTORY_DIR: /mt4-history
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    restart: unless-stopped
+    volumes:
+      - mt4history:/mt4-history:ro
+
+  mt4-history-sync:
+    image: alpine:latest
+    command: sh -c "cp -r /host-history/. /mt4-history/ && tail -f /dev/null"
+    volumes:
+      - /root/wine-mt4/drive_c/users/root/AppData/Roaming/MetaQuotes/Terminal/50CA3DFB510CC5A8F28B48D1BF2A5702/history:/host-history:ro
+      - mt4history:/mt4-history
+    restart: unless-stopped
+
+  bot:
+    build:
+      context: ../trading-alerts
+      dockerfile: Dockerfile
+    environment:
+      TELEGRAM_BOT_TOKEN: ${TELEGRAM_BOT_TOKEN}
+      TELEGRAM_CHAT_ID: ${TELEGRAM_CHAT_ID}
+      TRADING_SIGNALS_API_KEY: ${TRADING_SIGNALS_API_KEY}
+    volumes:
+      - botdata:/app/data
+    restart: unless-stopped
+
+  tick-simulator:
+    build:
+      context: ./tick-simulator
+      dockerfile: Dockerfile
+    environment:
+      TELEGRAM_BOT_TOKEN: ${TELEGRAM_BOT_TOKEN}
+      TWELVE_DATA_API_KEY: ${TWELVE_DATA_API_KEY}
+      TICK_SIMULATOR_BASE_URL: http://app:3000
+    depends_on:
+      app:
+        condition: service_started
+    restart: unless-stopped
+
+volumes:
+  pgdata:
+  redisdata:
+  botdata:
+  mt4history:

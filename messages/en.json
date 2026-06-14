@@ -1,0 +1,192 @@
+{
+  "common": {
+    "appName": "MacroSift",
+    "signIn": "Sign In",
+    "signOut": "Sign Out",
+    "dashboard": "Dashboard",
+    "pricing": "Pricing",
+    "loading": "Loading...",
+    "save": "Save",
+    "cancel": "Cancel",
+    "back": "Back",
+    "close": "Close",
+    "search": "Search",
+    "noData": "No data available",
+    "error": "Something went wrong",
+    "tryAgain": "Try again",
+    "networkError": "Network error",
+    "chartLoading": "Loading chart...",
+    "yourEmail": "your@email.com",
+    "trader": "Trader"
+  },
+  "landing": {
+    "hero": {
+      "title": "Trading Intelligence",
+      "subtitle": "That Actually Works",
+      "description": "Real-time alerts, professional charts, and market analysis — all in one platform. Built for traders who need an edge.",
+      "getStarted": "Get Started Free",
+      "viewPricing": "View Pricing"
+    },
+    "features": {
+      "alerts": { "title": "Smart Alerts", "desc": "Price, indicator, and volume alerts with Telegram push" },
+      "charts": { "title": "Advanced Charts", "desc": "30+ technical indicators on interactive WebGL charts" },
+      "scanner": { "title": "Market Scanner", "desc": "Scan 100+ assets across forex, stocks, and crypto" },
+      "analysis": { "title": "Pro Analysis", "desc": "Support/resistance, market structure, and volatility analysis" }
+    },
+    "footer": "Built for traders who don't miss a move."
+  },
+  "auth": {
+    "welcome": "Welcome to MacroSift",
+    "subtitle": "Sign in to access your trading dashboard",
+    "google": "Continue with Google",
+    "terms": "By signing in, you agree to our Terms of Service."
+  },
+  "pricing": {
+    "title": "Simple, Transparent Pricing",
+    "subtitle": "Start free, upgrade when you need more power.",
+    "popular": "Most Popular",
+    "free": {
+      "name": "Free",
+      "price": "$0",
+      "features": ["5 active alerts", "2 watchlist assets", "Basic market data", "Telegram notifications", "S/R chart levels"]
+    },
+    "pro": {
+      "name": "Pro",
+      "price": "$9/month",
+      "features": ["Unlimited alerts", "Unlimited watchlist", "Real-time market data", "Telegram & Email alerts", "S/R chart levels", "Priority support"]
+    }
+  },
+  "dashboard": {
+    "title": "Dashboard",
+    "welcome": "Welcome back, {name}",
+    "sidebar": {
+      "dashboard": "Dashboard",
+      "screener": "Screener",
+      "watchlist": "Watchlist",
+      "alerts": "Alerts",
+      "history": "History",
+      "settings": "Settings",
+      "pricing": "Pricing",
+      "version": "MacroSift v1.0"
+    },
+    "navbar": {
+      "greeting": "Good to see you,",
+      "plan": "{plan} plan"
+    },
+    "stats": {
+      "alertsActive": "Alerts Active",
+      "triggeredToday": "Triggered Today",
+      "watchlist": "Watchlist",
+      "plan": "Plan",
+      "ofLimit": "of {n} limit",
+      "upgrade": "upgrade for more",
+      "unlimited": "unlimited",
+      "assetsTracked": "assets tracked",
+      "todayVsYesterday": "+3 vs yesterday"
+    },
+    "marketOverview": {
+      "title": "Market Overview",
+      "loading": "Loading markets...",
+      "symbol": "Symbol",
+      "name": "Name",
+      "price": "Price",
+      "change": "Change",
+      "type": "Type"
+    },
+    "recentAlerts": {
+      "title": "Recent Alerts",
+      "empty": "No alerts triggered yet"
+    },
+    "marketMovers": {
+      "title": "Market Movers",
+      "loading": "Loading..."
+    },
+    "sRLabel": "S/R",
+    "sRTooltip": "Support & Resistance"
+  },
+  "alerts": {
+    "title": "Alerts",
+    "subtitle": "Configure price and indicator alerts",
+    "create": "Create Alert",
+    "creating": "Creating...",
+    "new": "New Alert",
+    "yourAlerts": "Your Alerts",
+    "empty": "No alerts yet. Create your first one.",
+    "loading": "Loading alerts...",
+    "fillFields": "Fill in all fields",
+    "created": "Alert created",
+    "failedCreate": "Failed to create alert",
+    "form": {
+      "symbol": "Symbol",
+      "symbolPlaceholder": "e.g. BTC/USD",
+      "type": "Type",
+      "condition": "Condition",
+      "value": "Value",
+      "valuePlaceholder": "e.g. 70",
+      "channel": "Channel",
+      "telegram": "Telegram",
+      "email": "Email",
+      "both": "Both"
+    }
+  },
+  "history": {
+    "title": "Alert History",
+    "subtitle": "Past triggered alerts",
+    "empty": "No alerts have been triggered yet.",
+    "log": "Log"
+  },
+  "screener": {
+    "title": "Screener",
+    "subtitle": "Browse and filter available markets",
+    "search": "Search symbols...",
+    "symbol": "Symbol",
+    "name": "Name",
+    "type": "Type",
+    "exchange": "Exchange",
+    "assetScreener": "Asset Screener"
+  },
+  "watchlist": {
+    "title": "Watchlist",
+    "loading": "Loading your assets...",
+    "assetsTracked": "{n} assets tracked",
+    "search": "Search and add symbols...",
+    "assets": "Assets",
+    "empty": "No assets tracked yet.",
+    "noSelection": "No asset selected",
+    "addHint": "Add symbols above to view charts",
+    "noData": "No chart data available for {symbol}",
+    "planLimit": "Free plan limit: {n} assets. Upgrade to Pro for unlimited."
+  },
+  "settings": {
+    "title": "Settings",
+    "subtitle": "Manage your account preferences",
+    "saved": "Settings saved",
+    "profile": "Profile",
+    "profileInfo": "Your account information",
+    "email": "Email",
+    "name": "Name",
+    "plan": "Plan",
+    "telegram": "Telegram",
+    "telegramInstructions": "Connect your Telegram account to receive real-time alerts.",
+    "telegramSend": "Send /start to our Telegram bot and reply with your email to receive alerts.",
+    "copyCommand": "Copy this command and send it to the bot.",
+    "notifications": {
+      "title": "Notifications",
+      "subtitle": "Configure how you receive alerts",
+      "saved": "Notification preferences saved",
+      "channels": "Channels",
+      "chooseChannels": "Choose where alerts are sent",
+      "telegram": "Telegram",
+      "telegramFast": "Fastest delivery, requires linked account",
+      "email": "Email",
+      "emailSentTo": "Sent to {email}",
+      "save": "Save Preferences",
+      "linkTelegram": "Link Telegram",
+      "linkTelegramDesc": "Send this command to our Telegram bot to link your account"
+    }
+  },
+  "notFound": {
+    "title": "Page not found",
+    "back": "Back to Dashboard"
+  }
+}

@@ -1,0 +1,36 @@
+{
+    acme_ca https://acme.zerossl.com/v2/DV90
+    email admin@macrosift.site
+}
+
+macrosift.site {
+
+    handle_path /vnc/* {
+        reverse_proxy novnc:6080
+    }
+    header /* {
+        X-Content-Type-Options "nosniff"
+        X-Frame-Options "DENY"
+        Referrer-Policy "strict-origin-when-cross-origin"
+    }
+
+    handle {
+        reverse_proxy app:3000
+    }
+
+    log {
+        output file /var/log/caddy/macrosift.log
+    }
+}
+
+autopartesproshop.com {
+    handle {
+        reverse_proxy autopartes-affiliate-autopartes-1:3000
+    }
+    header /* {
+        Strict-Transport-Security "max-age=31536000"
+    }
+    log {
+        output file /var/log/caddy/autopartesproshop.log
+    }
+}

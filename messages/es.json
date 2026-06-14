@@ -1,0 +1,192 @@
+{
+  "common": {
+    "appName": "MacroSift",
+    "signIn": "Iniciar Sesión",
+    "signOut": "Cerrar Sesión",
+    "dashboard": "Dashboard",
+    "pricing": "Precios",
+    "loading": "Cargando...",
+    "save": "Guardar",
+    "cancel": "Cancelar",
+    "back": "Volver",
+    "close": "Cerrar",
+    "search": "Buscar",
+    "noData": "Sin datos disponibles",
+    "error": "Algo salió mal",
+    "tryAgain": "Intentar de nuevo",
+    "networkError": "Error de red",
+    "chartLoading": "Cargando gráfico...",
+    "yourEmail": "tu@email.com",
+    "trader": "Trader"
+  },
+  "landing": {
+    "hero": {
+      "title": "Inteligencia de Trading",
+      "subtitle": "Que Realmente Funciona",
+      "description": "Alertas en tiempo real, gráficos profesionales y análisis de mercado — todo en una plataforma. Creado para traders que necesitan ventaja.",
+      "getStarted": "Empezar Gratis",
+      "viewPricing": "Ver Precios"
+    },
+    "features": {
+      "alerts": { "title": "Alertas Inteligentes", "desc": "Alertas de precio, indicadores y volumen con envío a Telegram" },
+      "charts": { "title": "Gráficos Avanzados", "desc": "Más de 30 indicadores técnicos en gráficos WebGL interactivos" },
+      "scanner": { "title": "Escáner de Mercado", "desc": "Escanea más de 100 activos en forex, acciones y crypto" },
+      "analysis": { "title": "Análisis Pro", "desc": "Soporte/resistencia, estructura de mercado y análisis de volatilidad" }
+    },
+    "footer": "Creado para traders que no se pierden ni un movimiento."
+  },
+  "auth": {
+    "welcome": "Bienvenido a MacroSift",
+    "subtitle": "Inicia sesión para acceder a tu dashboard de trading",
+    "google": "Continuar con Google",
+    "terms": "Al iniciar sesión, aceptas nuestros Términos de Servicio."
+  },
+  "pricing": {
+    "title": "Precios Simples y Transparentes",
+    "subtitle": "Empieza gratis, mejora cuando necesites más potencia.",
+    "popular": "Más Popular",
+    "free": {
+      "name": "Gratis",
+      "price": "$0",
+      "features": ["5 alertas activas", "2 activos en watchlist", "Datos básicos de mercado", "Notificaciones por Telegram", "Niveles S/R en gráfico"]
+    },
+    "pro": {
+      "name": "Pro",
+      "price": "$9/mes",
+      "features": ["Alertas ilimitadas", "Watchlist ilimitada", "Datos de mercado en tiempo real", "Alertas por Telegram y Email", "Niveles S/R en gráfico", "Soporte prioritario"]
+    }
+  },
+  "dashboard": {
+    "title": "Dashboard",
+    "welcome": "Bienvenido de nuevo, {name}",
+    "sidebar": {
+      "dashboard": "Dashboard",
+      "screener": "Screener",
+      "watchlist": "Watchlist",
+      "alerts": "Alertas",
+      "history": "Historial",
+      "settings": "Ajustes",
+      "pricing": "Precios",
+      "version": "MacroSift v1.0"
+    },
+    "navbar": {
+      "greeting": "Qué bueno verte,",
+      "plan": "Plan {plan}"
+    },
+    "stats": {
+      "alertsActive": "Alertas Activas",
+      "triggeredToday": "Activadas Hoy",
+      "watchlist": "Watchlist",
+      "plan": "Plan",
+      "ofLimit": "de {n} máximo",
+      "upgrade": "mejora para más",
+      "unlimited": "ilimitado",
+      "assetsTracked": "activos seguidos",
+      "todayVsYesterday": "+3 vs ayer"
+    },
+    "marketOverview": {
+      "title": "Resumen de Mercado",
+      "loading": "Cargando mercados...",
+      "symbol": "Símbolo",
+      "name": "Nombre",
+      "price": "Precio",
+      "change": "Cambio",
+      "type": "Tipo"
+    },
+    "recentAlerts": {
+      "title": "Alertas Recientes",
+      "empty": "No hay alertas aún"
+    },
+    "marketMovers": {
+      "title": "Movimientos del Mercado",
+      "loading": "Cargando..."
+    },
+    "sRLabel": "S/R",
+    "sRTooltip": "Soporte y Resistencia"
+  },
+  "alerts": {
+    "title": "Alertas",
+    "subtitle": "Configura alertas de precio e indicadores",
+    "create": "Crear Alerta",
+    "creating": "Creando...",
+    "new": "Nueva Alerta",
+    "yourAlerts": "Tus Alertas",
+    "empty": "No hay alertas. Crea la primera.",
+    "loading": "Cargando alertas...",
+    "fillFields": "Completa todos los campos",
+    "created": "Alerta creada",
+    "failedCreate": "Error al crear alerta",
+    "form": {
+      "symbol": "Símbolo",
+      "symbolPlaceholder": "ej. BTC/USD",
+      "type": "Tipo",
+      "condition": "Condición",
+      "value": "Valor",
+      "valuePlaceholder": "ej. 70",
+      "channel": "Canal",
+      "telegram": "Telegram",
+      "email": "Email",
+      "both": "Ambos"
+    }
+  },
+  "history": {
+    "title": "Historial de Alertas",
+    "subtitle": "Alertas activadas anteriormente",
+    "empty": "No se ha activado ninguna alerta aún.",
+    "log": "Registro"
+  },
+  "screener": {
+    "title": "Screener",
+    "subtitle": "Explora y filtra mercados disponibles",
+    "search": "Buscar símbolos...",
+    "symbol": "Símbolo",
+    "name": "Nombre",
+    "type": "Tipo",
+    "exchange": "Exchange",
+    "assetScreener": "Escáner de Activos"
+  },
+  "watchlist": {
+    "title": "Watchlist",
+    "loading": "Cargando tus activos...",
+    "assetsTracked": "{n} activos seguidos",
+    "search": "Buscar y añadir símbolos...",
+    "assets": "Activos",
+    "empty": "Aún no hay activos.",
+    "noSelection": "Ningún activo seleccionado",
+    "addHint": "Añade símbolos arriba para ver gráficos",
+    "noData": "No hay datos de gráfico para {symbol}",
+    "planLimit": "Límite plan Free: {n} activos. Mejora a Pro para ilimitado."
+  },
+  "settings": {
+    "title": "Ajustes",
+    "subtitle": "Gestiona tus preferencias de cuenta",
+    "saved": "Configuración guardada",
+    "profile": "Perfil",
+    "profileInfo": "Información de tu cuenta",
+    "email": "Email",
+    "name": "Nombre",
+    "plan": "Plan",
+    "telegram": "Telegram",
+    "telegramInstructions": "Conecta tu cuenta de Telegram para recibir alertas en tiempo real.",
+    "telegramSend": "Envía /start a nuestro bot de Telegram y responde con tu email para recibir alertas.",
+    "copyCommand": "Copia este comando y envíalo al bot.",
+    "notifications": {
+      "title": "Notificaciones",
+      "subtitle": "Configura cómo recibes alertas",
+      "saved": "Preferencias de notificación guardadas",
+      "channels": "Canales",
+      "chooseChannels": "Elige dónde se envían las alertas",
+      "telegram": "Telegram",
+      "telegramFast": "Entrega más rápida, requiere cuenta vinculada",
+      "email": "Email",
+      "emailSentTo": "Enviado a {email}",
+      "save": "Guardar Preferencias",
+      "linkTelegram": "Vincular Telegram",
+      "linkTelegramDesc": "Envía este comando al bot de Telegram para vincular tu cuenta"
+    }
+  },
+  "notFound": {
+    "title": "Página no encontrada",
+    "back": "Volver al Dashboard"
+  }
+}
