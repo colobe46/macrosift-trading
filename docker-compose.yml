@@ -63,9 +63,11 @@ services:
 
   mt4-history-sync:
     image: alpine:latest
+    profiles: [mt4]
     command: sh -c "cp -r /host-history/. /mt4-history/ && tail -f /dev/null"
     volumes:
-      - /root/wine-mt4/drive_c/users/root/AppData/Roaming/MetaQuotes/Terminal/50CA3DFB510CC5A8F28B48D1BF2A5702/history:/host-history:ro
+      # Change this path to your MT4 history directory (e.g., ~/wine-mt4/.../history/)
+      - ${MT4_HOST_HISTORY:-/root/wine-mt4/drive_c/users/root/AppData/Roaming/MetaQuotes/Terminal/50CA3DFB510CC5A8F28B48D1BF2A5702/history}:/host-history:ro
       - mt4history:/mt4-history
     restart: unless-stopped
 

@@ -2,15 +2,16 @@
 import { ArrowRight, BarChart3, Bell, Shield, TrendingUp, Zap } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent } from '@/components/ui/card'
-import Image from 'next/image'
 import Link from 'next/link'
 import { useSession } from 'next-auth/react'
 import { useT } from '@/i18n/LocaleProvider'
 import { LanguageSwitcher } from '@/components/ui/LanguageSwitcher'
+import { useTheme } from '@/components/ui/ThemeProvider'
 
 export default function HomePage() {
   const { data: session } = useSession()
   const { t } = useT()
+  const { theme } = useTheme()
 
   const features = [
     { icon: Bell, title: t('landing.features.alerts.title'), desc: t('landing.features.alerts.desc') },
@@ -24,7 +25,7 @@ export default function HomePage() {
       <nav className="border-b border-border">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
           <div className="flex items-center gap-2">
-            <Image src="/logo.webp" alt="MacroSift" width={120} height={65} className="h-8 w-auto" />
+            <img src={theme === 'dark' ? '/logo-light.svg' : '/logo.svg'} alt="MacroSift" className="h-24 w-auto" />
           </div>
           <div className="flex items-center gap-4">
             <LanguageSwitcher />

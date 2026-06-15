@@ -13,7 +13,7 @@ export function generateMetadata(): Metadata {
     title: `${tServer('common.appName')} - ${tServer('landing.hero.title')}`,
     description: tServer('landing.hero.description'),
     icons: {
-      icon: '/favicon.ico',
+      icon: '/favicon.svg',
       apple: '/apple-touch-icon.png',
     },
     openGraph: {
