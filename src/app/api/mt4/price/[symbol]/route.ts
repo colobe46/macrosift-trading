@@ -1,9 +1,11 @@
 import { NextRequest, NextResponse } from 'next/server'
 import redis from '@/lib/redis'
 
-export async function GET(req: NextRequest) {
-  const { searchParams } = new URL(req.url)
-  const symbol = (searchParams.get('symbol') || 'SP500').toUpperCase()
+export async function GET(
+  req: NextRequest,
+  { params }: { params: { symbol: string } }
+) {
+  const symbol = params.symbol.toUpperCase()
 
   const raw = await redis.get(`mt4:price:${symbol}`)
   if (!raw) {

@@ -11,15 +11,17 @@ export async function POST(req: NextRequest) {
     }
 
     const s = symbol.toUpperCase()
-    const payload = { bid, ask, timestamp: new Date().toISOString() }
-
-    await redis.set(`mt4:price:${s}`, JSON.stringify(payload))
-
     const ts = Date.now()
-    await redis.zadd(`mt4:history:${s}`, ts, `${ts}:${bid}:${ask}`)
-    await redis.zremrangebyrank(`mt4:history:${s}`, 0, -10001)
+    const payload = { bid, ask, timestamp: new Date().toISOString() }
+    const tickPayload = { bid, ask, time: ts }
 
-    await redis.publish(`mt4:tick:${s}`, JSON.stringify(payload))
+    await Promise.all([
+      redis.set(`mt4:price:${s}`, JSON.stringify(payload)),
+      redis.set(`tick:${s}`, JSON.stringify(tickPayload), 'EX', 60),
+      redis.zadd(`mt4:history:${s}`, ts, `${ts}:${bid}:${ask}`),
+      redis.zremrangebyrank(`mt4:history:${s}`, 0, -10001),
+      redis.publish(`mt4:tick:${s}`, JSON.stringify(payload)),
+    ])
 
     return NextResponse.json({ ok: true })
   } catch (e) {
